@@ -1,5 +1,5 @@
-WebJar for WEBJAR_NAME
+WebJar for Flotr2
 
 More info: http://webjars.org
 
-Upstream: WEBJAR_URL
+Upstream: http://www.humblesoftware.com/flotr2

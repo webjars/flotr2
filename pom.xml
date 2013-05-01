@@ -10,47 +10,40 @@
 
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
-    <artifactId>WEBJAR_ID</artifactId>
-    <version>UPSTREAM_VERSION-SNAPSHOT</version>
-    <name>WEBJAR_NAME</name>
-    <description>WebJar for WEBJAR_NAME</description>
+    <artifactId>flotr2</artifactId>
+    <version>d43f8566e8-SNAPSHOT</version>
+    <name>flotr2</name>
+    <description>WebJar for Flotr2</description>
     <url>http://webjars.org</url>
 
     <developers>
         <developer>
-            <id>YOUR_ID</id>
-            <name>YOUR_NAME</name>
-            <email>YOUR_EMAIL</email>
+            <id>jamesward</id>
+            <name>James Ward</name>
+            <email>james@jamesward.com</email>
         </developer>
     </developers>
 
     <licenses>
         <license>
-            <name>UPSTREAM_LICENSE_NAME</name>
-            <url>UPSTREAM_LICENSE_VERSION</url>
+            <name>Copyright (c) 2012 Carl Sutherland</name>
+            <url>https://github.com/HumbleSoftware/Flotr2/blob/master/LICENSE</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <scm>
-        <url>http://github.com/webjars/WEBJAR_ID</url>
-        <connection>scm:git:https://github.com/webjars/WEBJAR_ID.git</connection>
-        <developerConnection>scm:git:https://github.com/webjars/WEBJAR_ID.git</developerConnection>
+        <url>http://github.com/webjars/flotr2</url>
+        <connection>scm:git:https://github.com/webjars/flotr2.git</connection>
+        <developerConnection>scm:git:https://github.com/webjars/flotr2.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
     
-    <dependencies>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>ANOTHER_WEBJAR_ID</artifactId>
-            <version>ANOTHER_WEBJAR_VERSION</version>
-        </dependency>
-    </dependencies>
-    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>UPSTREAM_VERSION</upstream.version>
-        <upstream.url>UPSTREAM_URL</upstream.url>
+        <upstream.version>d43f8566e8</upstream.version>
+        <upstream.commit>d43f8566e84de3f3b7aa776dba3173a1246d438b</upstream.commit>
+        <upstream.url>https://raw.github.com/HumbleSoftware/Flotr2/${upstream.commit}</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
     
@@ -69,7 +62,7 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>WEBJAR_ID.js</fromFile>
+                            <fromFile>flotr2.js</fromFile>
                             <toDir>${destDir}</toDir>
                         </configuration>
                     </execution>
@@ -81,7 +74,31 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>WEBJAR_ID.min.js</fromFile>
+                            <fromFile>flotr2.min.js</fromFile>
+                            <toDir>${destDir}</toDir>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>download-ie-min-js</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>download-single</goal>
+                        </goals>
+                        <configuration>
+                            <url>${upstream.url}</url>
+                            <fromFile>flotr2.ie.min.js</fromFile>
+                            <toDir>${destDir}</toDir>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>download-amd-js</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>download-single</goal>
+                        </goals>
+                        <configuration>
+                            <url>${upstream.url}</url>
+                            <fromFile>flotr2.amd.js</fromFile>
                             <toDir>${destDir}</toDir>
                         </configuration>
                     </execution>
@@ -91,7 +108,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>2.4.1</version>
             </plugin>
         </plugins>
     </build>
