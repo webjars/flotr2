@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>flotr2</artifactId>
-    <version>d43f8566e8-SNAPSHOT</version>
+    <version>d43f8566e8</version>
     <name>flotr2</name>
     <description>WebJar for Flotr2</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/flotr2</url>
         <connection>scm:git:https://github.com/webjars/flotr2.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/flotr2.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>flotr2-d43f8566e8</tag>
     </scm>
     
     <properties>
